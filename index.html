@@ -1,0 +1,72 @@
+<script>
+    let pin = 3254
+   let code = "*894#";
+   let balance = 10000;
+  let letters = "abcdef";
+  let anotherTr = "/n1 perform another transaction /n2 Exit "
+   let stage1 = "1"
+   let stage2 = "2";
+   let firstBank = (prompt(" you are welcome to first Bank kindly dial *894#"));
+
+
+
+ while(true){
+  if(firstBank==code){
+     let userPin =Number (prompt("Kindly insert your pin")) 
+     if(userPin===pin)
+     {
+        let option = Number( prompt(`
+        Congratulations 
+   please select your option
+    1>Quick Banking
+    2>open an account
+    3>Loans
+    4>FirstMonie
+    5>Payattitude`))
+        if (option===1){
+            let quickBank = Number(prompt(
+                `1>Transfer Money
+                2>Airtime (self)
+                3>Airtime (others)
+                4>Data
+                5>Next page`
+            )) 
+        if (quickBank === 1){
+            let transferMoney = +(prompt(
+                `1>To others
+                 2>Between my firstbank Accounts`
+            ))
+            if (transferMoney === 1){
+                let otherBank = +(prompt(
+                    `
+                    Enter amount
+                    `
+                ))
+                 if ( otherBank <= balance ){
+                    balance -=otherBank;
+                    prompt(`you have ${balance} left`)
+                    
+                }
+                else if (otherBank == letters)
+                {
+                    alert("This is not a number")
+                }
+                
+                }
+            }
+        }
+        // else if(quickBank === 2){
+        // }
+    //     else if(option === 2){
+
+    //  }
+
+    else
+    {
+        alert("incorrect pin")
+    }
+}
+  }
+}
+   
+</script>
