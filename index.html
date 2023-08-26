@@ -1,9 +1,36 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> blurring pag </title>
+<link rel="stylesheet" href="./styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+
+ </head>
+ <body>
+  <div class="container">
+    <header class="header">
+      <h4 class="title">
+       Danny Bank
+      </h4>
+      <small class="subtitle">
+        Kindly Insert Your Card
+      </small>
+      <input type="text" name="" id="filter" placeholder="">
+    </header>
+    </div>
+
+
+
+  </body>
 <script>
+    
     let pin = 3254
    let code = "*894#";
    let balance = 10000;
   let letters = "abcdef";
-  let anotherTr = "/n1 perform another transaction /n2 Exit "
+ 
    let stage1 = "1"
    let stage2 = "2";
    let firstBank = (prompt(" you are welcome to first Bank kindly dial *894#"));
@@ -34,7 +61,7 @@
         if (quickBank === 1){
             let transferMoney = +(prompt(
                 `1>To others
-                 2>Between my firstbank Accounts`
+                 2>Between my Firstbank Accounts`
             ))
             if (transferMoney === 1){
                 let otherBank = +(prompt(
@@ -43,8 +70,14 @@
                     `
                 ))
                  if ( otherBank <= balance ){
-                    balance -=otherBank;
-                    prompt(`you have ${balance} left`)
+                   
+                    if( balance -=otherBank){
+                  let anotherTr =+(prompt(`You have #${balance} left \n \n1 Perform another transaction \n2 Exit `))
+                  if (anotherTr==1){
+                    alert("Do you want to perform Another transaction")
+                  }
+                  else("Cancel transaction")
+                }
                     
                 }
                 else if (otherBank == letters)
@@ -53,6 +86,7 @@
                 }
                 
                 }
+               
             }
         }
         // else if(quickBank === 2){
@@ -70,3 +104,6 @@
 }
    
 </script>
+
+</body> 
+</html>
